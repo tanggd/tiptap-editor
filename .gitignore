@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# node_modules
+node_modules
 dist
 dist-demo
 dist-ssr
@@ -39,7 +39,7 @@ coverage
 .nyc_output
 
 # Dependency directories
-# node_modules/
+node_modules/
 jspm_packages/
 
 # TypeScript cache
@@ -87,3 +87,5 @@ public
 # Temporary folders
 tmp/
 temp/
+
+# demo/node_modules
