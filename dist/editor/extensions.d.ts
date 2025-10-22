@@ -1,0 +1,2 @@
+export declare const createEditorExtensions: () => (import('@tiptap/core').Extension<import('@tiptap/starter-kit').StarterKitOptions, any> | import('@tiptap/core').Extension<import('@tiptap/extension-color').ColorOptions, any> | import('@tiptap/core').Mark<import('@tiptap/extension-underline').UnderlineOptions, any> | import('@tiptap/core').Node<import('@tiptap/extension-table-row').TableRowOptions, any>)[];
+//# sourceMappingURL=extensions.d.ts.map

@@ -1,0 +1,200 @@
+/* 富文本编辑器样式 */
+.rich-text-editor {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+.rich-text-editor-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.rich-text-editor-toolbar-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.2s;
+}
+.rich-text-editor-toolbar-item:hover {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+.rich-text-editor-toolbar-item.active {
+  background: #1890ff;
+  color: #fff;
+}
+.rich-text-editor-toolbar-item:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.rich-text-editor-toolbar-divider {
+  width: 1px;
+  height: 20px;
+  background: #d9d9d9;
+  margin: 0 4px;
+}
+.rich-text-editor-content {
+  padding: 12px;
+  min-height: 200px;
+  outline: none;
+}
+.rich-text-editor-content .ProseMirror {
+  outline: none;
+  min-height: 200px;
+}
+.rich-text-editor-content .ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #adb5bd;
+  pointer-events: none;
+  height: 0;
+}
+.rich-text-editor-content .ProseMirror h1,
+.rich-text-editor-content .ProseMirror h2,
+.rich-text-editor-content .ProseMirror h3,
+.rich-text-editor-content .ProseMirror h4,
+.rich-text-editor-content .ProseMirror h5,
+.rich-text-editor-content .ProseMirror h6 {
+  margin: 1.5em 0 0.5em 0;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.rich-text-editor-content .ProseMirror h1:first-child,
+.rich-text-editor-content .ProseMirror h2:first-child,
+.rich-text-editor-content .ProseMirror h3:first-child,
+.rich-text-editor-content .ProseMirror h4:first-child,
+.rich-text-editor-content .ProseMirror h5:first-child,
+.rich-text-editor-content .ProseMirror h6:first-child {
+  margin-top: 0;
+}
+.rich-text-editor-content .ProseMirror h1 {
+  font-size: 2em;
+}
+.rich-text-editor-content .ProseMirror h2 {
+  font-size: 1.5em;
+}
+.rich-text-editor-content .ProseMirror h3 {
+  font-size: 1.25em;
+}
+.rich-text-editor-content .ProseMirror h4 {
+  font-size: 1.1em;
+}
+.rich-text-editor-content .ProseMirror h5 {
+  font-size: 1em;
+}
+.rich-text-editor-content .ProseMirror h6 {
+  font-size: 0.9em;
+}
+.rich-text-editor-content .ProseMirror p {
+  margin: 0.5em 0;
+}
+.rich-text-editor-content .ProseMirror p:first-child {
+  margin-top: 0;
+}
+.rich-text-editor-content .ProseMirror p:last-child {
+  margin-bottom: 0;
+}
+.rich-text-editor-content .ProseMirror ul,
+.rich-text-editor-content .ProseMirror ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+.rich-text-editor-content .ProseMirror li {
+  margin: 0.25em 0;
+}
+.rich-text-editor-content .ProseMirror blockquote {
+  border-left: 3px solid #e2e8f0;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #64748b;
+  font-style: italic;
+}
+.rich-text-editor-content .ProseMirror code {
+  background: #f1f5f9;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+}
+.rich-text-editor-content .ProseMirror pre {
+  background: #f8fafc;
+  padding: 1em;
+  border-radius: 6px;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+.rich-text-editor-content .ProseMirror pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.9em;
+}
+.rich-text-editor-content .ProseMirror hr {
+  border: none;
+  border-top: 2px solid #e2e8f0;
+  margin: 2em 0;
+}
+.rich-text-editor-content .ProseMirror a {
+  color: #1890ff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.rich-text-editor-content .ProseMirror a:hover {
+  color: #40a9ff;
+}
+.rich-text-editor-content .ProseMirror img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 0.5em 0;
+}
+.rich-text-editor-content .ProseMirror table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+.rich-text-editor-content .ProseMirror table td,
+.rich-text-editor-content .ProseMirror table th {
+  border: 1px solid #e2e8f0;
+  padding: 0.5em;
+  text-align: left;
+}
+.rich-text-editor-content .ProseMirror table th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+.rich-text-editor-content .ProseMirror mark {
+  background: #fef08a;
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+.rich-text-editor-content .ProseMirror sub,
+.rich-text-editor-content .ProseMirror sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.rich-text-editor-content .ProseMirror sup {
+  top: -0.5em;
+}
+.rich-text-editor-content .ProseMirror sub {
+  bottom: -0.25em;
+}
+.rich-text-editor-readonly .rich-text-editor-toolbar {
+  display: none;
+}
+.rich-text-editor-readonly .rich-text-editor-content {
+  background: #fafafa;
+}

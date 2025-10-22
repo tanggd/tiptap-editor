@@ -1,0 +1,236 @@
+/* 富文本编辑器样式 */
+.rich-text-editor {
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+
+  &-toolbar {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fafafa;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #666;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #e6f7ff;
+        color: #1890ff;
+      }
+
+      &.active {
+        background: #1890ff;
+        color: #fff;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    &-divider {
+      width: 1px;
+      height: 20px;
+      background: #d9d9d9;
+      margin: 0 4px;
+    }
+  }
+
+  &-content {
+    padding: 12px;
+    min-height: 200px;
+    outline: none;
+
+    .ProseMirror {
+      outline: none;
+      min-height: 200px;
+
+      p.is-editor-empty:first-child::before {
+        content: attr(data-placeholder);
+        float: left;
+        color: #adb5bd;
+        pointer-events: none;
+        height: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        margin: 1.5em 0 0.5em 0;
+        font-weight: 600;
+        line-height: 1.25;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      h3 {
+        font-size: 1.25em;
+      }
+
+      h4 {
+        font-size: 1.1em;
+      }
+
+      h5 {
+        font-size: 1em;
+      }
+
+      h6 {
+        font-size: 0.9em;
+      }
+
+      p {
+        margin: 0.5em 0;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      ul,
+      ol {
+        padding-left: 1.5em;
+        margin: 0.5em 0;
+      }
+
+      li {
+        margin: 0.25em 0;
+      }
+
+      blockquote {
+        border-left: 3px solid #e2e8f0;
+        padding-left: 1em;
+        margin: 1em 0;
+        color: #64748b;
+        font-style: italic;
+      }
+
+      code {
+        background: #f1f5f9;
+        padding: 0.2em 0.4em;
+        border-radius: 3px;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        font-size: 0.9em;
+      }
+
+      pre {
+        background: #f8fafc;
+        padding: 1em;
+        border-radius: 6px;
+        margin: 1em 0;
+        overflow-x: auto;
+
+        code {
+          background: none;
+          padding: 0;
+          font-size: 0.9em;
+        }
+      }
+
+      hr {
+        border: none;
+        border-top: 2px solid #e2e8f0;
+        margin: 2em 0;
+      }
+
+      a {
+        color: #1890ff;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: #40a9ff;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 0.5em 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        margin: 1em 0;
+        width: 100%;
+
+        td,
+        th {
+          border: 1px solid #e2e8f0;
+          padding: 0.5em;
+          text-align: left;
+        }
+
+        th {
+          background: #f8fafc;
+          font-weight: 600;
+        }
+      }
+
+      mark {
+        background: #fef08a;
+        padding: 0.1em 0.2em;
+        border-radius: 2px;
+      }
+
+      sub,
+      sup {
+        font-size: 0.75em;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+      }
+
+      sup {
+        top: -0.5em;
+      }
+
+      sub {
+        bottom: -0.25em;
+      }
+    }
+  }
+
+  &-readonly {
+    .rich-text-editor-toolbar {
+      display: none;
+    }
+
+    .rich-text-editor-content {
+      background: #fafafa;
+    }
+  }
+}
